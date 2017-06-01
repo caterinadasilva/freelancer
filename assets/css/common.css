@@ -1,0 +1,219 @@
+/* 
+// RESET
+// http://meyerweb.com/eric/tools/css/reset/
+// v2.0 | 20110126
+// License: none (public domain)
+*/
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+color: #333;
+line-height: 1;
+font-family: 'Lato', Helvetica, Arial, sans-serif;
+background-color: #f9f9f9;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+/*
+ * GRILLA
+ */
+[class*="col-"]{
+	min-height: 7px;
+	float: left;
+	margin-left: .5%;
+	margin-right: .5%;
+}
+.col-12 {
+	width: 99%;
+}
+.col-11 {
+	width: 90.6667%;
+}
+.col-10 {
+	width: 79.3334%;
+}
+.col-9 {
+	width: 74%;
+}
+.col-8 {
+	width: 66.6667%;
+}
+.col-7 {
+	width: 58.3334%;
+}
+.col-6 {
+	width: 49%;
+}
+.col-5 {
+	width: 40.6667%;
+}
+.col-4 {
+	width: 32.3334%;
+}
+.col-3 {
+	width: 24%;
+}
+.col-2 {
+	width: 15.6667%;
+}
+.col-1 {
+	width: 7.3334%;
+}
+
+/* Clases de soporte */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+.container {
+	max-width: 1100px;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+.row {
+	margin-left: -.5%;
+	margin-right: -.5%;
+	clear: both;
+	width: 100%;
+}
+.row:before, .row:after{
+	content: "";
+	display: table;
+}
+.row:after{
+	clear: both;
+}
+.m-0 {
+	margin: 0 !important;
+}
+.p-0 {
+	padding: 0 !important;
+}
+.centered {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.left {
+	float: left !important;
+}
+.right {
+	float: right !important;
+}
+
+/*
+// ESTILOS REUTILIZABLES
+*/
+
+/* Tipografía */
+ h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	font-weight: 900;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2.5rem;
+}
+h3 {
+	font-size: 2rem;
+}
+h4 {
+	font-size: 1.7rem;
+}
+h5 {
+	font-size: 1.5rem;
+}
+h6 {
+	font-size: 1.3rem;
+}
+.lead  {
+
+}
+
+/* Interacción */
+
+[class*="btn"] {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+[class*="btn":hover] {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+a, a:hover, 
+button, button:hover {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.btn {
+	width: 200px;
+	border: none;
+	background-color: pink;
+}
+.btn:hover {
+	background-color: salmon;
+}
+.btn-social {
+
+}

@@ -1,3 +1,0 @@
-/*
- * Archivo principal de JS
- */
