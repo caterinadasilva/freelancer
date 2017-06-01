@@ -170,16 +170,33 @@ h3 {
 	font-size: 2rem;
 }
 h4 {
-	font-size: 1.7rem;
-}
-h5 {
 	font-size: 1.5rem;
 }
-h6 {
+h5 {
 	font-size: 1.3rem;
 }
+h6 {
+	font-size: 1.15rem;
+}
+p {
+    line-height: 140%;
+    font-size: 1.1rem;
+    padding: 0 .5em;
+}
+small {
+    display: block;
+    margin: .25em 0;
+	font-size: 90%;
+}
+address {
+    font-size: 120%;
+    line-height: 140%;
+}
 .lead  {
-
+    font-size: 150%;
+}
+.text-center {
+	text-align: center;
 }
 
 /* Interacción */
@@ -207,14 +224,171 @@ button, button:hover {
 	-o-transition: all 0.5s;
 	transition: all 0.5s;
 }
+a {
+	color: #18BC9C;
+}
+a:hover, a:focus, a:active {
+	color: #00A685;
+	text-decoration: underline;
+}
 .btn {
-	width: 200px;
-	border: none;
-	background-color: pink;
+	padding: .75em;
+    border: 1px solid #fff;
+    background-color: #18BC9C;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 1em auto 0;
+    display: inline-block;
+    font-size: 110%;
 }
 .btn:hover {
-	background-color: salmon;
+	background-color: #00A685;
+}
+.btn.download {
+    text-align: right;
+    padding: 1em 1.5em 1em 3em;
+    margin: 2em auto 0;
+    position: relative;
+}
+.btn.download:before {
+	position: absolute;
+	content: "\f019";
+	font-family: 'FontAwesome';
+	left: 1.5em;
 }
 .btn-social {
+    color: #fff;
+    font-size: 1.3rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 2.1;
+    display: inline-block;
+    text-align: center;
+    margin: 0 .25em;
+    background-color: transparent;
+}
+.btn-social:hover, .btn-social:focus, .btn-social:active {
+	background-color: #fff;
+}
+.row:first-child .form-input {
+    border-top: 1px solid #eee;
+}
+.form-input {
+    border-bottom: 1px solid #eee;
+}
+.form-input label {
+    display: none;
+}
+.form-input input, .form-input textarea {
+	background: transparent;
+    border: none;
+    width: 100%;
+    padding: 5px;
+    color: #555;
+    margin: 15px 0;
+    font-size: 120%;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
 
+}
+.form-input input::placeholder, .form-input textarea::placeholder {
+color: #9e9e9e;
+}
+.form-input textarea {
+    height: 5em;
+}
+/* INPUT NUMBER SIN FLECHAS */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none; 
+margin: 0; 
+}
+
+/*
+// HEADER
+*/
+header {
+	width: 100%;
+	height: 7em;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background-color: #2C3E50;
+	transition: height 0.3s;
+	color: #fff;
+}
+header h1#logo {
+    display: inline-block;
+    line-height: 3.5em;
+    padding: 0 .25em;
+    float: left;
+    font-size: 2em;
+    color: #fff;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+header h1#logo:after {
+	display: none;
+}
+header nav {
+	display: inline-block;
+	float: right;
+    padding: 0 .5em;
+}
+header nav a {
+	line-height: 9em;
+    margin-left: 1em;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: .8em;
+}
+header nav a:hover, header nav a:focus, header nav a:active {
+color: #fd5559;
+}
+header.smaller {
+	height: 4em;
+}
+header.smaller h1#logo {
+	line-height: 2.5em;
+    font-size: 1.5em;
+}
+header.smaller nav a {
+	line-height: 5.2em;
+}
+
+/*
+// FOOTER
+*/
+footer {
+	text-align: center;
+	color: #fff;
+}
+footer h4 {
+	margin: 0 0 1em;
+}
+footer a {
+	text-decoration: none;
+}
+footer .top {
+	padding: 50px 0;
+    background-color: #2C3E50;
+}
+footer .top small {
+	font-size: 110%;
+	line-height: 140%;
+	padding: 0 1em;
+}
+footer .bot {
+	padding: 25px 0;
+    background-color: #233140;
 }
