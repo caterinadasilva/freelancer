@@ -147,6 +147,9 @@ border-spacing: 0;
 .right {
 	float: right !important;
 }
+.hidden {
+	display: none !important;
+}
 
 /*
 // ESTILOS REUTILIZABLES
@@ -161,10 +164,10 @@ border-spacing: 0;
 	letter-spacing: 1px;
 }
 h1 {
-	font-size: 3rem;
+	font-size: 4rem;
 }
 h2 {
-	font-size: 2.5rem;
+	font-size: 3rem;
 }
 h3 {
 	font-size: 2rem;
@@ -244,6 +247,8 @@ a:hover, a:focus, a:active {
 }
 .btn:hover {
 	background-color: #00A685;
+	color: #fff;
+	text-decoration: none;
 }
 .btn.download {
     text-align: right;
@@ -256,6 +261,25 @@ a:hover, a:focus, a:active {
 	content: "\f019";
 	font-family: 'FontAwesome';
 	left: 1.5em;
+}
+.btn.close {
+	border: 1px solid #9e9e9e;
+    background-color: transparent;
+    color: #555;
+    padding: .5em .5em .5em 2em;
+    font-size: 90%;
+    position: relative;
+}
+.btn.close:before {
+	position: absolute;
+	content: "\f00d";
+	font-family: 'FontAwesome';
+	left: .9em;
+}
+.btn.close:hover {
+	color: #fff;
+	background-color: #2C3E50;
+	border-color: #2C3E50;
 }
 .btn-social {
     color: #fff;
@@ -294,7 +318,7 @@ a:hover, a:focus, a:active {
 
 }
 .form-input input::placeholder, .form-input textarea::placeholder {
-color: #9e9e9e;
+	color: #9e9e9e;
 }
 .form-input textarea {
     height: 5em;
@@ -302,8 +326,8 @@ color: #9e9e9e;
 /* INPUT NUMBER SIN FLECHAS */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
--webkit-appearance: none; 
-margin: 0; 
+	-webkit-appearance: none; 
+	margin: 0; 
 }
 
 /*
@@ -353,7 +377,8 @@ header nav a {
     font-size: .8em;
 }
 header nav a:hover, header nav a:focus, header nav a:active {
-color: #fd5559;
+	color: #fd5559;
+	text-decoration: none;
 }
 header.smaller {
 	height: 4em;
