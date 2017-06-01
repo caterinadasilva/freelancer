@@ -138,8 +138,8 @@ border-spacing: 0;
 	padding: 0 !important;
 }
 .centered {
-	margin-left: auto !important;
-	margin-right: auto !important;
+	margin: 0 auto;
+	float: none;
 }
 .left {
 	float: left !important;
@@ -190,6 +190,7 @@ h6 {
 	-ms-transition: all 0.5s;
 	-o-transition: all 0.5s;
 	transition: all 0.5s;
+	cursor: pointer;
 }
 [class*="btn":hover] {
 	-webkit-transition: all 0.5s;
