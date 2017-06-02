@@ -32,8 +32,7 @@ window.addEventListener('scroll', function () {
 
 // // VALIDACIÓN FORMULARIO // //
 (function validateForm(){
-	var sendBtn = document.getElementById('sendBtn');
-	sendBtn.addEventListener('click', function() {
+	document.getElementById('sendBtn').addEventListener('click', function() {
 		event.preventDefault();
 	// ELIMINAR SMALLS DE VALIDACIONES ANTERIORES
 		document.querySelectorAll(".form-input small").forEach(function(small) {small.remove()});
