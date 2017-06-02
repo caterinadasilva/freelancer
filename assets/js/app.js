@@ -17,16 +17,20 @@ window.addEventListener('scroll', function () {
 	var boxes = Array.from(document.getElementsByClassName("project"));
 	var modal = document.getElementById("work-modal");
 	var modalBody = document.getElementsByClassName('modal-body')[0];
-	var close = document.getElementById("close");
+	var closeX = document.getElementById("close");
+	var closeBtn = document.getElementsByClassName('close')[0];
 	boxes.forEach(function(box){
 		box.addEventListener("click", function(){
 			event.preventDefault();
 			modalBody.innerHTML = box.innerHTML;
 			modal.classList.remove("hidden");
-			close.addEventListener("click",function(){
+			closeX.addEventListener("click",function(){
 				modal.classList.add("hidden");
 			});
-		});		
+			closeBtn.addEventListener("click",function(){
+				modal.classList.add("hidden");
+			});
+		});
 	});
 })();
 
