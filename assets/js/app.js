@@ -36,7 +36,7 @@ window.addEventListener('scroll', function () {
 
 // // VALIDACIÓN FORMULARIO // //
 (function validateForm(){
-	document.getElementById('sendBtn').addEventListener('click', function() {
+	document.getElementById('sendBtn').addEventListener('click', function(event) {
 		event.preventDefault();
 	// ELIMINAR SMALLS DE VALIDACIONES ANTERIORES
 		document.querySelectorAll(".form-input small").forEach(function(small) {small.remove()});
@@ -45,6 +45,7 @@ window.addEventListener('scroll', function () {
 		var email = document.getElementById('email').value;
 		var phone = document.getElementById('phone').value;
 		var textarea = document.getElementById('textarea').value;
+		var validaciones = true;
 	// CARACTERES VÁLIDOS // REGULAR EXPRESSIONS
 		var validName = /^[A-Za-z]*/;
 		var validPhone = /^56(?=[1-9]\d{0,2}[1-9])(?=\d{2,15}$)\d+$/;
@@ -53,77 +54,79 @@ window.addEventListener('scroll', function () {
 		// VERIFICACIÓN DE CAMPO OBLIGATORIO
 		if (name === "") {
 			var rellenarText = document.createTextNode("Por favor, rellene este campo.");
-			var labelError = document.createElement('small');
-			labelError.classList.add('label', 'error');
-			labelError.appendChild(rellenarText);
-			document.getElementsByClassName('form-input')[0].appendChild(labelError);
+			document.getElementsByClassName('form-input')[0].appendChild(labelErr());
 			console.log("Nombre:" + name);
+			validaciones = validaciones && false;
 		} else {
-		// IMPRIMIR Y VACIAR CAMPO
+		// IMPRIMIR
 			console.log("Nombre:" + name);
-			document.getElementById('name').value = "";
+			validaciones = validaciones && true;
 		}
 	////// EMAIL
 		// VERIFICACIÓN DE CAMPOS VACÍOS	
 		if (email === "") {
 			var rellenarText = document.createTextNode("Por favor, rellene este campo.");
-			var labelError = document.createElement('small');
-			labelError.classList.add('label', 'error');
-			labelError.appendChild(rellenarText);
-			document.getElementsByClassName('form-input')[1].appendChild(labelError);
+			document.getElementsByClassName('form-input')[1].appendChild(labelErr());
 			console.log("Correo: " + email);
+			validaciones = validaciones && false;
 		}
 		// VERIFICACIÓN DE CARACTERES REQUERIDOS
 		else if(!validEmail.test(email)) {
-			var correoText = document.createTextNode("Este correo no es válido.");
-			var labelError = document.createElement('small');
-			labelError.classList.add('label', 'error');
-			labelError.appendChild(correoText);
-			document.getElementsByClassName('form-input')[1].appendChild(labelError);
+			var rellenarText = document.createTextNode("Este correo no es válido.");
+			document.getElementsByClassName('form-input')[1].appendChild(labelErr());
 			console.log("Correo: " + email + ". Tiene caracteres no permitidos.");
+			validaciones = validaciones && false;
 		}
-		// IMPRIMIR Y VACIAR CAMPO
+		// IMPRIMIR
 		else {
 			console.log("Correo: " + email);
-			document.getElementById('email').value = "";
+			validaciones = validaciones && true;
 		}
 	////// TELÉFONO
 		// VERIFICACIÓN DE CAMPOS VACÍOS	
 		if (phone === "") {
 			var rellenarText = document.createTextNode("Por favor, rellene este campo.");
-			var labelError = document.createElement('small');
-			labelError.classList.add('label', 'error');
-			labelError.appendChild(rellenarText);
-			document.getElementsByClassName('form-input')[2].appendChild(labelError);
+			document.getElementsByClassName('form-input')[2].appendChild(labelErr());
 			console.log("Phone: " + phone);
+			validaciones = validaciones && false;
 		}
 		// VERIFICACIÓN DE CARACTERES REQUERIDOS
 		else if(!validPhone.test(phone)) {
-			var phoneText = document.createTextNode("Este número no es válido.");
-			var labelError = document.createElement('small');
-			labelError.classList.add('label', 'error');
-			labelError.appendChild(phoneText);
-			document.getElementsByClassName('form-input')[2].appendChild(labelError);
+			var rellenarText = document.createTextNode("Este número no es válido.");
+			document.getElementsByClassName('form-input')[2].appendChild(labelErr());
 			console.log("Teléfono: " + phone + ". Tiene caracteres no permitidos.");
+			validaciones = validaciones && false;
 		}
-		// IMPRIMIR Y VACIAR CAMPO
+		// IMPRIMIR
 		else {
 			console.log("Teléfono: " + phone);
-			document.getElementById('phone').value = "";
+			validaciones = validaciones && true;
 		}
 	////// MENSAJE
 		// VERIFICACIÓN DE CAMPO OBLIGATORIO	
 		if (textarea === "") {
 			var rellenarText = document.createTextNode("Por favor, rellene este campo.");
+			document.getElementsByClassName('form-input')[3].appendChild(labelErr());
+			console.log("Mensaje:" + textarea);
+			validaciones = validaciones && false;
+		} else {
+		// IMPRIMIR
+			console.log("Mensaje:" + textarea);
+			validaciones = validaciones && true;
+		}
+	////// VACIAR CAMPOS
+		if (validaciones == true) {
+			document.getElementById('name').value = "";
+			document.getElementById('email').value = "";
+			document.getElementById('phone').value = "";
+			document.getElementById('textarea').value = "";
+		}
+
+		function labelErr() {
 			var labelError = document.createElement('small');
 			labelError.classList.add('label', 'error');
 			labelError.appendChild(rellenarText);
-			document.getElementsByClassName('form-input')[3].appendChild(labelError);
-			console.log("Mensaje:" + textarea);
-		} else {
-		// IMPRIMIR Y VACIAR CAMPO
-			console.log("Mensaje:" + textarea);
-			document.getElementById('textarea').value = "";
+			return labelError;
 		}
 	////// FIN
 	});
